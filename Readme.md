@@ -29,7 +29,7 @@ App is a simple client for 500px popular photo stream.
 ### Todos
  - Write more tests
  - Fix data ordering in list
- - Optimise recyclerview adapaters notifications
+ - Optimise recyclerview adapters notifications
  - Provide better UI
 
 ### Author
