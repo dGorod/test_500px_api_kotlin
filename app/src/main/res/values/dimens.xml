@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_xs">10sp</dimen>
+    <dimen name="text_s">12sp</dimen>
+    <dimen name="text_m">16sp</dimen>
+    <dimen name="text_l">18sp</dimen>
+    <dimen name="text_xl">20sp</dimen>
+    <dimen name="text_xxl">24sp</dimen>
+
+    <dimen name="indent_default">10dp</dimen>
+    <dimen name="indent_s">5dp</dimen>
+    <dimen name="indent_l">15dp</dimen>
+
+    <dimen name="photo_card_size">160dp</dimen>
+</resources>

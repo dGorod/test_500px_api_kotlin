@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PhotoCardText.Details">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:lines">@null</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:padding">@dimen/indent_default</item>
+    </style>
+</resources>

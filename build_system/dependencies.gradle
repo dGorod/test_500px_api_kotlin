@@ -1,0 +1,90 @@
+
+ext.appVersion = [
+        major: 0,
+        minor: 0,
+        patch: 0,
+        build: 1
+]
+
+ext.config = [
+        code: appVersion.major * 10000 + appVersion.minor * 1000 + appVersion.patch * 100 + appVersion.build,
+        version: "$appVersion.major.$appVersion.minor.$appVersion.patch",
+
+        buildTools: "27.0.0",
+        minSdk: 21,
+        targetSdk: 26,
+        compileSdk: 26,
+
+        applicationId : "ua.dgorod.example",
+        testApplicationId : "ua.dgorod.example.test",
+        testInstrumentationRunner : "android.support.test.runner.AndroidJUnitRunner"
+]
+
+ext.versions = [
+    // main
+        supportLib: "27.0.0",
+        archLib: "1.1.0",
+        room: "1.0.0",
+        koin: "0.8.2",
+        retrofit: "2.3.0",
+    // testing
+        supportTestLib: "1.0.1",
+        mockito: "2.13.0",
+    // developing
+        leakCanary: "1.5.4",
+        blockCanary: "1.5.0"
+]
+
+ext.googleLibraries = [
+        appCompat:          "com.android.support:appcompat-v7:$versions.supportLib",
+        coreUtils:          "com.android.support:support-core-utils:$versions.supportLib",
+        annotations:        "com.android.support:support-annotations:$versions.supportLib",
+        design:             "com.android.support:design:$versions.supportLib",
+        constraintLayout:   "com.android.support.constraint:constraint-layout:1.0.2",
+        recyclerView:       "com.android.support:recyclerview-v7:$versions.supportLib",
+        cardView:           "com.android.support:cardview-v7:$versions.supportLib"
+]
+
+ext.archLibraries = [
+        runtime:            "android.arch.lifecycle:runtime:$versions.archLib",
+        extensions:         "android.arch.lifecycle:extensions:$versions.archLib",
+        compiler:           "android.arch.lifecycle:compiler:$versions.archLib",
+        room:               "android.arch.persistence.room:runtime:$versions.room",
+        roomRxJava2:        "android.arch.persistence.room:rxjava2:$versions.room",
+        roomCompiler:       "android.arch.persistence.room:compiler:$versions.room"
+]
+
+ext.libraries = [
+        koin:               "org.koin:koin-android:$versions.koin",
+        koinViewModels:     "org.koin:koin-android-architecture:$versions.koin",
+        rxJava2:            "io.reactivex.rxjava2:rxjava:2.1.6",
+        rxAndroid:          "io.reactivex.rxjava2:rxandroid:2.0.1",
+        timber:             "com.jakewharton.timber:timber:4.6.0",
+        retrofit:           "com.squareup.retrofit2:retrofit:$versions.retrofit",
+        retrofitRxJava2:    "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+        retrofitScalars:    "com.squareup.retrofit2:converter-scalars:$versions.retrofit",
+        retrofitGson:       "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+        retrofitLogger:     "com.squareup.okhttp3:logging-interceptor:3.9.1",
+        picasso:            "com.squareup.picasso:picasso:2.5.2",
+        imageZoomView:      "it.sephiroth.android.library.imagezoom:imagezoom:2.3.0"
+]
+
+ext.testLibraries = [
+        junit:              "junit:junit:4.12",
+        assertj:            "org.assertj:assertj-core:3.3.0",
+        mockito:            "org.mockito:mockito-core:$versions.mockito",
+        mockitoAndroid:     "org.mockito:mockito-android:$versions.mockito",
+        runner:             "com.android.support.test:runner:$versions.supportTestLib",
+        rules:              "com.android.support.test:rules:$versions.supportTestLib",
+        espresso:           "com.android.support.test.espresso:espresso-core:3.0.1",
+        archCore:           "android.arch.core:core-testing:$versions.archLib",
+        roomRules:          "android.arch.persistence.room:testing:$versions.room",
+        koinTesting:        "org.koin:koin-test:$versions.koin"
+]
+
+ext.devLibraries = [
+        leakCanary:         "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary",
+        leakCanaryNoOp:     "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakCanary",
+        blockCanary:        "com.github.markzhai:blockcanary-android:$versions.blockCanary",
+        blockCanaryNoOp:    "com.github.markzhai:blockcanary-no-op:$versions.blockCanary"
+]

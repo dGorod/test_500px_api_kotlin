@@ -1,0 +1,113 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+repositories {
+    mavenCentral()
+    google()
+    maven { url "http://repository.jetbrains.com/all" }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+android {
+    compileSdkVersion config.compileSdk
+    buildToolsVersion config.buildTools
+
+    defaultConfig {
+        applicationId config.applicationId
+        testApplicationId config.testApplicationId
+
+        minSdkVersion config.minSdk
+        targetSdkVersion config.targetSdk
+        multiDexEnabled true
+
+        versionCode config.code
+        versionName config.version
+
+        testInstrumentationRunner config.testInstrumentationRunner
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/MANIFEST.MF'
+        exclude 'META-INF/rxjava.properties'
+        exclude 'pom.xml'
+    }
+}
+
+dependencies {
+    implementation project(':data')
+    implementation project(':domain')
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.anko:anko-sdk21:$anko_version"
+
+    implementation googleLibraries.appCompat
+    implementation googleLibraries.coreUtils
+    implementation googleLibraries.annotations
+    implementation googleLibraries.design
+    implementation googleLibraries.constraintLayout
+    implementation googleLibraries.recyclerView
+    implementation googleLibraries.cardView
+
+    implementation archLibraries.runtime
+    implementation archLibraries.extensions
+    implementation archLibraries.room
+
+    implementation libraries.koin
+    implementation libraries.koinViewModels
+    implementation libraries.rxJava2
+    implementation libraries.rxAndroid
+    implementation libraries.timber
+    implementation libraries.picasso
+    implementation libraries.imageZoomView
+
+    testImplementation testLibraries.junit
+    testImplementation testLibraries.assertj
+    testImplementation testLibraries.mockito
+    testImplementation testLibraries.runner
+
+    androidTestImplementation testLibraries.mockitoAndroid
+    androidTestImplementation testLibraries.runner
+    androidTestImplementation testLibraries.rules
+    androidTestImplementation testLibraries.koinTesting
+    androidTestImplementation(testLibraries.espresso, { exclude group: 'com.android.support', module: 'support-annotations' })
+
+    debugImplementation devLibraries.leakCanary
+    releaseImplementation devLibraries.leakCanaryNoOp
+
+    //debugImplementation devLibraries.blockCanary
+    //releaseImplementation devLibraries.blockCanaryNoOp
+
+    kapt archLibraries.compiler
+    kapt archLibraries.roomCompiler
+}
+
+android.applicationVariants.all { variant ->
+    if (variant.buildType.name != "debug") {
+        variant.outputs.all {
+            outputFileName = "${variant.applicationId}-v${variant.versionName}-${variant.name}.apk"
+        }
+    }
+}

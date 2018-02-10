@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ua.dgorod.example.ui.activity.MainActivity">
+
+    <ProgressBar
+        android:id="@+id/vProgress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/vPhotos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingEnd="@dimen/indent_s"
+        android:paddingStart="@dimen/indent_s"
+        android:paddingTop="@dimen/indent_default"
+        tools:listitem="@layout/item_photo" />
+
+    <LinearLayout
+        android:id="@+id/vEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@null"
+            android:layout_marginBottom="@dimen/indent_l"
+            android:src="@drawable/ic_cloud_off_24dp" />
+
+        <TextView
+            android:id="@+id/vEmptyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gotham_book"
+            android:text="@string/error_no_data"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_l" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="api_url" translatable="false">https://api.500px.com/v1/</string>
+    <string name="api_request_popular_photos">popular</string>
+    <string name="api_500px_consumer_key" translatable="false">wB4ozJxTijCwNuggJvPGtBGCRqaZVcF6jsrzUadF</string>
+    <string name="api_time_format" translatable="false">yyyy-MM-dd\'T\'HH:mm:ssZZZZZ</string>
+</resources>

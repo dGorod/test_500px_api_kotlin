@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_900">
+
+    <it.sephiroth.android.library.imagezoom.ImageViewTouch
+        android:id="@+id/vPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/photo" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/vShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/indent_default"
+        android:contentDescription="@string/share"
+        android:src="@drawable/ic_share_24dp"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/semi_transparent_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/vName" />
+
+    <TextView
+        android:id="@+id/vName"
+        style="@style/PhotoCardText.Details"
+        android:fontFamily="@font/gotham_medium"
+        android:textSize="@dimen/text_l"
+        app:layout_constraintBottom_toTopOf="@+id/vAuthor"
+        tools:text="Some test name" />
+
+    <TextView
+        android:id="@+id/vAuthor"
+        style="@style/PhotoCardText.Details"
+        android:textSize="@dimen/text_m"
+        app:layout_constraintBottom_toTopOf="@+id/vDevice"
+        tools:text="Some cool author with very long name" />
+
+    <TextView
+        android:id="@+id/vDevice"
+        style="@style/PhotoCardText.Details"
+        android:textSize="@dimen/text_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="Some cool camera with lens" />
+</android.support.constraint.ConstraintLayout>

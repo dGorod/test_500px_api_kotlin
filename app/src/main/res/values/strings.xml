@@ -1,0 +1,17 @@
+<resources>
+    <!-- Common -->
+    <string name="app_name">test 500px kotlin</string>
+    <string name="photo">Photo</string>
+    <string name="share">Share</string>
+    <string name="n_a">n/a</string>
+
+    <!-- Errors -->
+    <string name="error_general">Oops! Something went wrong.</string>
+    <string name="error_no_data">No data.</string>
+
+    <!-- DetailsActivity -->
+    <string name="author" formatted="false">Author: %s</string>
+    <string name="device" formatted="false">Device: %s</string>
+    <string name="photo_url">Photo URL</string>
+    <string name="share_this">Share this photo</string>
+</resources>
