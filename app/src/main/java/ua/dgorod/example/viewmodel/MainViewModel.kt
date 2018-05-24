@@ -26,6 +26,7 @@ open class MainViewModel(private val photosSource: PhotosInteractor): RxViewMode
         }
 
         disposable.add(photosSource.get(page)
+                .filter { it.isNotEmpty() }
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe { loadingStatus.value = true }
                 .doOnNext { loadingStatus.value = false }

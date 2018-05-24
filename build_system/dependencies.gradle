@@ -10,7 +10,7 @@ ext.config = [
         code: appVersion.major * 10000 + appVersion.minor * 1000 + appVersion.patch * 100 + appVersion.build,
         version: "$appVersion.major.$appVersion.minor.$appVersion.patch",
 
-        buildTools: "27.0.0",
+        buildTools: "27.0.3",
         minSdk: 21,
         targetSdk: 26,
         compileSdk: 26,
@@ -22,7 +22,7 @@ ext.config = [
 
 ext.versions = [
     // main
-        supportLib: "27.0.0",
+        supportLib: "27.1.1",
         archLib: "1.1.0",
         room: "1.0.0",
         koin: "0.8.2",
