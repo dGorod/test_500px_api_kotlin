@@ -1,3 +1,8 @@
+[Deprecated]
+
+500px service [closed its public API](https://support.500px.com/hc/en-us/articles/360002435653-API-).
+
+
 # 500px test app
 
 App is a simple client for 500px popular photo stream.
